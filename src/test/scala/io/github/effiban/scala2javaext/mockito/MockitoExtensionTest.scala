@@ -1,6 +1,7 @@
 package io.github.effiban.scala2javaext.mockito
 
 import io.github.effiban.scala2javaext.mockito.testsuites.UnitTestSuite
+import io.github.effiban.scala2javaext.mockito.transformer.MockitoClassTransformer
 
 import scala.meta.{Source, XtensionQuasiquoteTerm}
 
@@ -60,5 +61,9 @@ class MockitoExtensionTest extends UnitTestSuite {
       q"import foo2.bar2"
     ))
     shouldBeAppliedTo(source) shouldBe false
+  }
+
+  test("classTransformer() should return MockitoClassTransformer") {
+    classTransformer() shouldBe MockitoClassTransformer
   }
 }
