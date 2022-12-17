@@ -1,11 +1,13 @@
 package io.github.effiban.scala2javaext.mockito
 
-import io.github.effiban.scala2javaext.mockito.MockitoExtension.shouldBeAppliedTo
 import io.github.effiban.scala2javaext.mockito.testsuites.UnitTestSuite
 
 import scala.meta.{Source, XtensionQuasiquoteTerm}
 
 class MockitoExtensionTest extends UnitTestSuite {
+
+  private val mockitoExtension = new MockitoExtension
+  import mockitoExtension._
 
   test("shouldBeAppliedTo() when has one mockito importer should return true") {
     val source = Source(List(q"import org.mockito.Mock"))
