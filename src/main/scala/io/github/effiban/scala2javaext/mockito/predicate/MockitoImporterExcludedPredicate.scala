@@ -7,7 +7,7 @@ import scala.meta.{Importer, XtensionQuasiquoteImporter, XtensionQuasiquoteTerm}
 object MockitoImporterExcludedPredicate extends ImporterExcludedPredicate {
 
   override def apply(importer: Importer): Boolean = importer match {
-    case importer"org.mockito.ArgumentMatcherSugar" |
+    case importer"org.mockito.ArgumentMatchersSugar" |
          importer"org.mockito.IdiomaticMockito" |
          importer"org.mockito.MockitoSugar" |
          Importer(q"org.mockito.integrations.scalatest", _) => true

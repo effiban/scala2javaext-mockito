@@ -8,7 +8,7 @@ class MockitoImporterExcludedPredicateTest extends UnitTestSuite {
 
   private val ImporterScenarios = Table(
     ("Importer", "ExpectedExcluded"),
-    (importer"org.mockito.ArgumentMatcherSugar", true),
+    (importer"org.mockito.ArgumentMatchersSugar", true),
     (importer"org.mockito.IdiomaticMockito", true),
     (importer"org.mockito.MockitoSugar", true),
     (importer"org.mockito.integrations.scalatest.ResetMocksAfterEachTest", true),
@@ -19,7 +19,7 @@ class MockitoImporterExcludedPredicateTest extends UnitTestSuite {
   )
 
   forAll(ImporterScenarios) { case (importer: Importer, expectedExcluded: Boolean) =>
-    test(s"$importer should ${if (!expectedExcluded) "not "}be excluded") {
+    test(s"$importer should ${if (expectedExcluded) "be" else "not be"} excluded") {
       MockitoImporterExcludedPredicate(importer) shouldBe expectedExcluded
     }
   }
