@@ -2,7 +2,7 @@ package io.github.effiban.scala2javaext.mockito
 
 import io.github.effiban.scala2javaext.mockito.predicate.{MockitoImporterExcludedPredicate, MockitoTemplateInitExcludedPredicate}
 import io.github.effiban.scala2javaext.mockito.testsuites.UnitTestSuite
-import io.github.effiban.scala2javaext.mockito.transformer.MockitoClassTransformer
+import io.github.effiban.scala2javaext.mockito.transformer.{MockitoClassTransformer, MockitoDefnValToDeclVarTransformer}
 
 import scala.meta.{Source, XtensionQuasiquoteTerm}
 
@@ -74,5 +74,9 @@ class MockitoExtensionTest extends UnitTestSuite {
 
   test("templateInitExcludedPredicate() should return MockitoTemplateInitExcludedPredicate") {
     templateInitExcludedPredicate() shouldBe MockitoTemplateInitExcludedPredicate
+  }
+
+  test("defnValToDeclVarTransformer() should return MockitoDefnValToDeclVarTransformer") {
+    defnValToDeclVarTransformer() shouldBe MockitoDefnValToDeclVarTransformer
   }
 }
