@@ -79,4 +79,19 @@ class MockitoDefnValToDeclVarTransformerTest extends UnitTestSuite {
 
     transform(defnVal, JavaScope.Class).value.structure shouldBe expectedDeclVar.structure
   }
+
+  test("transform() for a mock in block scope should return None") {
+    val defnVal = q"private val foo = mock[Foo]"
+    transform(defnVal, JavaScope.Block) shouldBe None
+  }
+
+  test("transform() for a spy in block scope should return None") {
+    val defnVal = q"private val foo = spy[Foo]"
+    transform(defnVal, JavaScope.Block) shouldBe None
+  }
+
+  test("transform() for a captor in block scope should return None") {
+    val defnVal = q"private val myCaptor = ArgCaptor[Foo]"
+    transform(defnVal, JavaScope.Block) shouldBe None
+  }
 }

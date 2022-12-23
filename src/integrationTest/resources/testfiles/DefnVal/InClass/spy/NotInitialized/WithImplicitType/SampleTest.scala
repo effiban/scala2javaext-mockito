@@ -1,6 +1,6 @@
 package dummy
 
-import org.mockito.Mockito.spy
+import org.mockito.MockitoSugar.spy
 
 class SampleTest {
 
