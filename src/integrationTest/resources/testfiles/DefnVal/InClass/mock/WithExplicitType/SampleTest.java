@@ -6,7 +6,7 @@ import java.math.*;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
-import org.mockito.Mockito.mock;
+import org.mockito.MockitoSugar.mock;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SampleTest {

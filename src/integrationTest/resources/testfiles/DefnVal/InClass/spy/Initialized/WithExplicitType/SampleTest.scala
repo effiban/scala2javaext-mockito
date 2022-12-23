@@ -4,5 +4,5 @@ import org.mockito.MockitoSugar.spy
 
 class SampleTest {
 
-  private val x: Foo = spy[Foo]
+  private val x: Foo = spy[Foo](new Foo(2))
 }

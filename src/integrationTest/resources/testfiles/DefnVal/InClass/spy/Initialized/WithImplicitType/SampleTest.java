@@ -11,7 +11,7 @@ import org.mockito.MockitoSugar.spy;
 @RunWith(MockitoJUnitRunner.class)
 public class SampleTest {
     @Spy
-    private Foo x;
+    private final Foo x = new Foo(2);
 
     public SampleTest() {
     }
