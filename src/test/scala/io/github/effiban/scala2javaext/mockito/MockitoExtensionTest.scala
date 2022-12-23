@@ -1,6 +1,7 @@
 package io.github.effiban.scala2javaext.mockito
 
 import io.github.effiban.scala2javaext.mockito.predicate.{MockitoImporterExcludedPredicate, MockitoTemplateInitExcludedPredicate}
+import io.github.effiban.scala2javaext.mockito.providers.MockitoAdditionalImportersProvider
 import io.github.effiban.scala2javaext.mockito.testsuites.UnitTestSuite
 import io.github.effiban.scala2javaext.mockito.transformer.{MockitoClassTransformer, MockitoDefnValToDeclVarTransformer, MockitoDefnValTransformer}
 
@@ -62,6 +63,10 @@ class MockitoExtensionTest extends UnitTestSuite {
       q"import foo2.bar2"
     ))
     shouldBeAppliedTo(source) shouldBe false
+  }
+
+  test("additionalImportersProvider() should return MockitoAdditionalImportersProvider") {
+    additionalImportersProvider() shouldBe MockitoAdditionalImportersProvider
   }
 
   test("importerExcludedPredicate() should return MockitoImporterExcludedPredicate") {
