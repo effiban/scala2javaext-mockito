@@ -1,9 +1,9 @@
 package io.github.effiban.scala2javaext.mockito
 
 import io.github.effiban.scala2java.spi.Scala2JavaExtension
-import io.github.effiban.scala2java.spi.predicates.ImporterExcludedPredicate
+import io.github.effiban.scala2java.spi.predicates.{ImporterExcludedPredicate, TemplateInitExcludedPredicate}
 import io.github.effiban.scala2java.spi.transformers.ClassTransformer
-import io.github.effiban.scala2javaext.mockito.predicate.MockitoImporterExcludedPredicate
+import io.github.effiban.scala2javaext.mockito.predicate.{MockitoImporterExcludedPredicate, MockitoTemplateInitExcludedPredicate}
 import io.github.effiban.scala2javaext.mockito.transformer.MockitoClassTransformer
 
 import scala.meta.{Source, Term}
@@ -17,4 +17,6 @@ class MockitoExtension extends Scala2JavaExtension {
   override def importerExcludedPredicate(): ImporterExcludedPredicate = MockitoImporterExcludedPredicate
 
   override def classTransformer(): ClassTransformer = MockitoClassTransformer
+
+  override def templateInitExcludedPredicate(): TemplateInitExcludedPredicate = MockitoTemplateInitExcludedPredicate
 }
