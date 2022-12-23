@@ -1,5 +1,6 @@
 package io.github.effiban.scala2javaext.mockito
 
+import io.github.effiban.scala2javaext.mockito.predicate.MockitoImporterExcludedPredicate
 import io.github.effiban.scala2javaext.mockito.testsuites.UnitTestSuite
 import io.github.effiban.scala2javaext.mockito.transformer.MockitoClassTransformer
 
@@ -65,5 +66,9 @@ class MockitoExtensionTest extends UnitTestSuite {
 
   test("classTransformer() should return MockitoClassTransformer") {
     classTransformer() shouldBe MockitoClassTransformer
+  }
+
+  test("importerExcludedPredicate() should return MockitoImporterExcludedPredicate") {
+    importerExcludedPredicate() shouldBe MockitoImporterExcludedPredicate
   }
 }

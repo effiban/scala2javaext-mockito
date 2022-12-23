@@ -6,6 +6,9 @@ plugins {
     id 'signing'
 }
 
+project.ext.scalaMajorVersion = "2.13"
+project.ext.scala2javaVersion = "2.0.2"
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
@@ -23,14 +26,14 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.github.effiban:scala2java-spi_2.13:2.0.0'
+    implementation "io.github.effiban:scala2java-spi_$scalaMajorVersion:$scala2javaVersion"
 }
 
 testing {
     suites {
         configureEach {
             dependencies {
-                implementation 'io.github.effiban:scala2java-test-utils_2.13:2.0.0'
+                implementation "io.github.effiban:scala2java-test-utils_$scalaMajorVersion:$scala2javaVersion"
                 runtimeOnly 'com.vladsch.flexmark:flexmark-all:0.64.0'
             }
         }
@@ -74,7 +77,7 @@ tasks.named('check') {
 publishing {
     publications {
         scala2javaextMockito(MavenPublication) {
-            artifactId = "${project.name}_2.13"
+            artifactId = "${project.name}_$scalaMajorVersion"
             from components.java
 
             pom {
