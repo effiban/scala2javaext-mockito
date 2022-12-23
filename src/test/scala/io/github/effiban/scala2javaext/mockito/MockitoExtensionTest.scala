@@ -3,7 +3,7 @@ package io.github.effiban.scala2javaext.mockito
 import io.github.effiban.scala2javaext.mockito.predicate.{MockitoImporterExcludedPredicate, MockitoTemplateInitExcludedPredicate}
 import io.github.effiban.scala2javaext.mockito.providers.MockitoAdditionalImportersProvider
 import io.github.effiban.scala2javaext.mockito.testsuites.UnitTestSuite
-import io.github.effiban.scala2javaext.mockito.transformer.{MockitoClassTransformer, MockitoDefnValToDeclVarTransformer, MockitoDefnValTransformer}
+import io.github.effiban.scala2javaext.mockito.transformer.{MockitoClassTransformer, MockitoDefnValToDeclVarTransformer, MockitoDefnValTransformer, MockitoTermApplyTypeToTermApplyTransformer}
 
 import scala.meta.{Source, XtensionQuasiquoteTerm}
 
@@ -87,5 +87,9 @@ class MockitoExtensionTest extends UnitTestSuite {
 
   test("defnValToDeclVarTransformer() should return MockitoDefnValToDeclVarTransformer") {
     defnValToDeclVarTransformer() shouldBe MockitoDefnValToDeclVarTransformer
+  }
+
+  test("termApplyTypeToTermApplyTransformer() should return MockitoTermApplyTypeToTermApplyTransformer") {
+    termApplyTypeToTermApplyTransformer() shouldBe MockitoTermApplyTypeToTermApplyTransformer
   }
 }

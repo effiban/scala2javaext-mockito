@@ -3,10 +3,10 @@ package io.github.effiban.scala2javaext.mockito
 import io.github.effiban.scala2java.spi.Scala2JavaExtension
 import io.github.effiban.scala2java.spi.predicates.{ImporterExcludedPredicate, TemplateInitExcludedPredicate}
 import io.github.effiban.scala2java.spi.providers.AdditionalImportersProvider
-import io.github.effiban.scala2java.spi.transformers.{ClassTransformer, DefnValToDeclVarTransformer, DefnValTransformer}
+import io.github.effiban.scala2java.spi.transformers.{ClassTransformer, DefnValToDeclVarTransformer, DefnValTransformer, TermApplyTypeToTermApplyTransformer}
 import io.github.effiban.scala2javaext.mockito.predicate.{MockitoImporterExcludedPredicate, MockitoTemplateInitExcludedPredicate}
 import io.github.effiban.scala2javaext.mockito.providers.MockitoAdditionalImportersProvider
-import io.github.effiban.scala2javaext.mockito.transformer.{MockitoClassTransformer, MockitoDefnValToDeclVarTransformer, MockitoDefnValTransformer}
+import io.github.effiban.scala2javaext.mockito.transformer.{MockitoClassTransformer, MockitoDefnValToDeclVarTransformer, MockitoDefnValTransformer, MockitoTermApplyTypeToTermApplyTransformer}
 
 import scala.meta.{Source, Term}
 
@@ -28,4 +28,6 @@ class MockitoExtension extends Scala2JavaExtension {
   override def defnValTransformer(): DefnValTransformer = MockitoDefnValTransformer
 
   override def defnValToDeclVarTransformer(): DefnValToDeclVarTransformer = MockitoDefnValToDeclVarTransformer
+
+  override def termApplyTypeToTermApplyTransformer(): TermApplyTypeToTermApplyTransformer = MockitoTermApplyTypeToTermApplyTransformer
 }
