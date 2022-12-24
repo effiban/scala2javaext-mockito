@@ -8,14 +8,12 @@ import io.github.effiban.scala2javaext.mockito.predicate.{MockitoImporterExclude
 import io.github.effiban.scala2javaext.mockito.providers.MockitoAdditionalImportersProvider
 import io.github.effiban.scala2javaext.mockito.transformer.{MockitoClassTransformer, MockitoDefnValToDeclVarTransformer, MockitoDefnValTransformer, MockitoTermApplyTypeToTermApplyTransformer}
 
-import scala.meta.{Source, Term}
+import scala.meta.{Term, XtensionQuasiquoteTerm}
 
 class MockitoExtension extends Scala2JavaExtension {
 
-  override def shouldBeAppliedTo(source: Source): Boolean = source.collect {
-    case mockitoQualifier@Term.Select(Term.Name("org"), Term.Name("mockito")) => mockitoQualifier
-  }.nonEmpty
-
+  override def shouldBeAppliedIfContains(termSelect: Term.Select): Boolean =
+    q"org.mockito".structure == termSelect.structure
 
   override def additionalImportersProvider(): AdditionalImportersProvider = MockitoAdditionalImportersProvider
 
