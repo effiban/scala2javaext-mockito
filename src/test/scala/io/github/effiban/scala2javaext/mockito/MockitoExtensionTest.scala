@@ -3,9 +3,10 @@ package io.github.effiban.scala2javaext.mockito
 import io.github.effiban.scala2javaext.mockito.predicate.{MockitoImporterExcludedPredicate, MockitoTemplateInitExcludedPredicate}
 import io.github.effiban.scala2javaext.mockito.providers.MockitoAdditionalImportersProvider
 import io.github.effiban.scala2javaext.mockito.testsuites.UnitTestSuite
-import io.github.effiban.scala2javaext.mockito.transformer.{MockitoClassTransformer, MockitoDefnValToDeclVarTransformer, MockitoDefnValTransformer, MockitoTermApplyTypeToTermApplyTransformer}
+import io.github.effiban.scala2javaext.mockito.transformer._
+import org.mockito.ArgumentMatchersSugar.any
 
-import scala.meta.{Source, XtensionQuasiquoteTerm}
+import scala.meta.XtensionQuasiquoteTerm
 
 class MockitoExtensionTest extends UnitTestSuite {
 
@@ -21,6 +22,7 @@ class MockitoExtensionTest extends UnitTestSuite {
   }
 
   test("additionalImportersProvider() should return MockitoAdditionalImportersProvider") {
+    any[String]
     additionalImportersProvider() shouldBe MockitoAdditionalImportersProvider
   }
 
@@ -46,5 +48,9 @@ class MockitoExtensionTest extends UnitTestSuite {
 
   test("termApplyTypeToTermApplyTransformer() should return MockitoTermApplyTypeToTermApplyTransformer") {
     termApplyTypeToTermApplyTransformer() shouldBe MockitoTermApplyTypeToTermApplyTransformer
+  }
+
+  test("termSelectTransformer() should return MockitoTermSelectTransformer") {
+    termSelectTransformer() shouldBe MockitoTermSelectTransformer
   }
 }
