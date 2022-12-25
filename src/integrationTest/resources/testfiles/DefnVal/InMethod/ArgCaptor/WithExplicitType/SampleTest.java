@@ -17,6 +17,6 @@ public class SampleTest {
     }
 
     public void aMethod() {
-        final Captor<Foo> fooCaptor = ArgCaptor(Foo.class);
+        final ArgumentCaptor<Foo> fooCaptor = ArgCaptor(Foo.class);
     }
 }

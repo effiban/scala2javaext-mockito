@@ -13,7 +13,7 @@ import org.mockito.captor.ArgCaptor;
 @RunWith(MockitoJUnitRunner.class)
 public class SampleTest {
     @Captor
-    private Captor<Foo> fooCaptor;
+    private ArgumentCaptor<Foo> fooCaptor;
 
     public SampleTest() {
     }
