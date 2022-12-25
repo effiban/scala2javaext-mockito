@@ -3,7 +3,7 @@ package io.github.effiban.scala2javaext.mockito.transformer
 import io.github.effiban.scala2java.spi.entities.JavaScope
 import io.github.effiban.scala2java.spi.entities.JavaScope.JavaScope
 import io.github.effiban.scala2java.spi.transformers.DefnValToDeclVarTransformer
-import io.github.effiban.scala2javaext.mockito.common.MockitoAnnotations.{Captor, Mock, Spy}
+import io.github.effiban.scala2javaext.mockito.common.MockitoAnnotations.{Captor, JavaCaptor, Mock, Spy}
 
 import scala.meta.{Decl, Defn, Mod, Term, XtensionQuasiquoteTerm, XtensionQuasiquoteType}
 
@@ -39,7 +39,7 @@ object MockitoDefnValToDeclVarTransformer extends DefnValToDeclVarTransformer {
   private def transformCaptorMember(defnVal: Defn.Val): Option[Decl.Var] = {
     import defnVal._
 
-    val newMods = Captor +: mods
+    val newMods = JavaCaptor +: mods
     (decltpe, rhs) match {
       case (Some(tpe), _) => Some(Decl.Var(newMods, pats, tpe))
       case (None, Term.ApplyType(_, tpe :: Nil)) => Some(Decl.Var(newMods, pats, t"Captor[$tpe]"))

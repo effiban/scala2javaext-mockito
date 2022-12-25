@@ -61,7 +61,7 @@ class MockitoDefnValToDeclVarTransformerTest extends UnitTestSuite {
 
     val expectedDeclVar =
       q"""
-      @Captor
+      @JavaCaptor
       private var myCaptor: Captor[Foo]
       """
 
@@ -73,7 +73,7 @@ class MockitoDefnValToDeclVarTransformerTest extends UnitTestSuite {
 
     val expectedDeclVar =
       q"""
-      @Captor
+      @JavaCaptor
       private var myCaptor: Captor[Foo]
       """
 
