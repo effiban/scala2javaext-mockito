@@ -29,6 +29,8 @@ class MockitoExtension extends Scala2JavaExtension {
 
   override def termApplyTypeToTermApplyTransformer(): TermApplyTypeToTermApplyTransformer = MockitoTermApplyTypeToTermApplyTransformer
 
+  override def termApplyTransformer(): TermApplyTransformer = MockitoTermApplyTransformer
+
   override def termSelectTransformer(): TermSelectTransformer = MockitoTermSelectTransformer
 
   override def typeNameTransformer(): TypeNameTransformer = MockitoTypeNameTransfomer
