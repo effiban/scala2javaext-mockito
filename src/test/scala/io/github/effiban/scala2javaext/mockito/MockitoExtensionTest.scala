@@ -4,7 +4,6 @@ import io.github.effiban.scala2javaext.mockito.predicate.{MockitoImporterExclude
 import io.github.effiban.scala2javaext.mockito.providers.MockitoAdditionalImportersProvider
 import io.github.effiban.scala2javaext.mockito.testsuites.UnitTestSuite
 import io.github.effiban.scala2javaext.mockito.transformer._
-import org.mockito.ArgumentMatchersSugar.any
 
 import scala.meta.XtensionQuasiquoteTerm
 
@@ -22,7 +21,6 @@ class MockitoExtensionTest extends UnitTestSuite {
   }
 
   test("additionalImportersProvider() should return MockitoAdditionalImportersProvider") {
-    any[String]
     additionalImportersProvider() shouldBe MockitoAdditionalImportersProvider
   }
 
@@ -48,6 +46,10 @@ class MockitoExtensionTest extends UnitTestSuite {
 
   test("termApplyTypeToTermApplyTransformer() should return MockitoTermApplyTypeToTermApplyTransformer") {
     termApplyTypeToTermApplyTransformer() shouldBe MockitoTermApplyTypeToTermApplyTransformer
+  }
+
+  test("termApplyTransformer() should return MockitoTermApplyTransformer") {
+    termApplyTransformer() shouldBe MockitoTermApplyTransformer
   }
 
   test("termSelectTransformer() should return MockitoTermSelectTransformer") {

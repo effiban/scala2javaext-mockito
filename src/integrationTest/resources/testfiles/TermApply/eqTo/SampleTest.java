@@ -7,8 +7,8 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 import org.mockito.*;
-import org.mockito.captor.Captor;
-import org.mockito.captor.ArgCaptor;
+import org.mockito.ArgumentMatchersSugar.eqTo;
+import org.mockito.MockitoSugar.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SampleTest {
@@ -17,6 +17,7 @@ public class SampleTest {
     }
 
     public void aMethod() {
-        final ArgumentCaptor<Foo> fooCaptor = ArgumentCaptor.forClass(Foo.class);
+        when(foo.getBar(eq("bar")))
+            .thenReturn("zoo");
     }
 }
