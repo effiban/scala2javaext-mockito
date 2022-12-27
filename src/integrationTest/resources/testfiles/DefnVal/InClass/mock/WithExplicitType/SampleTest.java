@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 import org.mockito.*;
-import org.mockito.MockitoSugar.mock;
+import org.mockito.Mockito.mock;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SampleTest {
