@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 import org.mockito.*;
-import org.mockito.MockitoSugar.spy;
+import org.mockito.Mockito.spy;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SampleTest {

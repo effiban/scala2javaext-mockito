@@ -19,6 +19,8 @@ class MockitoExtension extends Scala2JavaExtension {
 
   override def importerExcludedPredicate(): ImporterExcludedPredicate = MockitoImporterExcludedPredicate
 
+  override def importerTransformer(): ImporterTransformer = MockitoImporterTransformer
+
   override def classTransformer(): ClassTransformer = MockitoClassTransformer
 
   override def templateInitExcludedPredicate(): TemplateInitExcludedPredicate = MockitoTemplateInitExcludedPredicate

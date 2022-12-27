@@ -7,8 +7,8 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 import org.mockito.*;
-import org.mockito.ArgumentMatchersSugar.eqTo;
-import org.mockito.MockitoSugar.when;
+import org.mockito.ArgumentMatchers.eq;
+import org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SampleTest {

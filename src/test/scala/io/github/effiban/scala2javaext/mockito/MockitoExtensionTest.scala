@@ -28,6 +28,10 @@ class MockitoExtensionTest extends UnitTestSuite {
     importerExcludedPredicate() shouldBe MockitoImporterExcludedPredicate
   }
 
+  test("importerTransformer() should return MockitoImporterTransformer") {
+    importerTransformer() shouldBe MockitoImporterTransformer
+  }
+
   test("classTransformer() should return MockitoClassTransformer") {
     classTransformer() shouldBe MockitoClassTransformer
   }
