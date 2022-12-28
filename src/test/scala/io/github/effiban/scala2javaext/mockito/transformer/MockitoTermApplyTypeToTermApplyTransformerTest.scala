@@ -9,6 +9,12 @@ class MockitoTermApplyTypeToTermApplyTransformerTest extends UnitTestSuite {
 
   private val Scenarios = Table(
     ("TermApplyType", "ExpectedMaybeTermApply"),
+    (q"any[Foo]", Some(q"any(classOf[Foo])")),
+    (q"anyIterable[Foo]", Some(q"any(classOf[Iterable[Foo]])")),
+    (q"anyList[Foo]", Some(q"any(classOf[List[Foo]])")),
+    (q"anyMap[MyKey, MyValue]", Some(q"any(classOf[Map[MyKey, MyValue]])")),
+    (q"anySeq[Foo]", Some(q"any(classOf[Seq[Foo]])")),
+    (q"anySet[Foo]", Some(q"any(classOf[Set[Foo]])")),
     (q"mock[Foo]", Some(q"mock(classOf[Foo])")),
     (q"spy[Foo]", Some(q"spy(classOf[Foo])")),
     (q"ArgCaptor[Foo]", Some(q"ArgCaptor(classOf[Foo])")),
