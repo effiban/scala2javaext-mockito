@@ -10,10 +10,11 @@ class MockitoImporterTransformerTest extends UnitTestSuite {
   private val Scenarios = Table(
     ("Input", "ExpectedOutput"),
     (importer"org.mockito.ArgumentMatchersSugar.argThat", importer"org.mockito.ArgumentMatchers.argThat"),
-    (importer"org.mockito.ArgumentMatchersSugar.intThat", importer"org.mockito.ArgumentMatchers.argThat"),
     (importer"org.mockito.ArgumentMatchersSugar.any", importer"org.mockito.ArgumentMatchers.any"),
     (importer"org.mockito.ArgumentMatchersSugar.anyList", importer"org.mockito.ArgumentMatchers.any"),
     (importer"org.mockito.ArgumentMatchersSugar.eqTo", importer"org.mockito.ArgumentMatchers.eq"),
+    (importer"org.mockito.ArgumentMatchersSugar.intThat", importer"org.mockito.ArgumentMatchers.argThat"),
+    (importer"org.mockito.ArgumentMatchersSugar.isA", importer"org.mockito.ArgumentMatchers.isA"),
     (importer"org.mockito.ArgumentMatchersSugar._", importer"org.mockito.ArgumentMatchers._"),
     (importer"org.mockito.MockitoSugar.mock", importer"org.mockito.Mockito.mock"),
     (importer"org.mockito.MockitoSugar.spy", importer"org.mockito.Mockito.spy"),
