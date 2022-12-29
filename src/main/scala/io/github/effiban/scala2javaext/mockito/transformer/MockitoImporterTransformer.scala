@@ -20,6 +20,7 @@ object MockitoImporterTransformer extends ImporterTransformer {
     theImportee match {
       case Importee.Name(nm) if nm.value.startsWith("any") => Importer(newRef, List(importee"any"))
       case importee"eqTo" => Importer(newRef, List(importee"eq"))
+      case importee"isA" => Importer(newRef, List(importee"isA"))
       case Importee.Name(nm) if nm.value.endsWith("That") => Importer(newRef, List(importee"argThat"))
       case Importee.Wildcard() => Importer(newRef, List(Importee.Wildcard()))
       case anImportee => Importer(ref, List(anImportee))

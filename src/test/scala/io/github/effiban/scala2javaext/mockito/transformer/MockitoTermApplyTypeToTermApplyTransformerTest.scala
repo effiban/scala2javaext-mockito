@@ -15,6 +15,7 @@ class MockitoTermApplyTypeToTermApplyTransformerTest extends UnitTestSuite {
     (q"anyMap[MyKey, MyValue]", Some(q"any(classOf[Map[MyKey, MyValue]])")),
     (q"anySeq[Foo]", Some(q"any(classOf[Seq[Foo]])")),
     (q"anySet[Foo]", Some(q"any(classOf[Set[Foo]])")),
+    (q"isA[Foo]", Some(q"isA(classOf[Foo])")),
     (q"mock[Foo]", Some(q"mock(classOf[Foo])")),
     (q"spy[Foo]", Some(q"spy(classOf[Foo])")),
     (q"ArgCaptor[Foo]", Some(q"ArgCaptor(classOf[Foo])")),
