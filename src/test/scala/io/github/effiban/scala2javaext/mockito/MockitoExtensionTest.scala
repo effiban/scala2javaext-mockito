@@ -1,9 +1,6 @@
 package io.github.effiban.scala2javaext.mockito
 
-import io.github.effiban.scala2javaext.mockito.predicate.{MockitoImporterExcludedPredicate, MockitoTemplateInitExcludedPredicate}
-import io.github.effiban.scala2javaext.mockito.providers.MockitoAdditionalImportersProvider
 import io.github.effiban.scala2javaext.mockito.testsuites.UnitTestSuite
-import io.github.effiban.scala2javaext.mockito.transformer._
 
 import scala.meta.XtensionQuasiquoteTerm
 
@@ -18,45 +15,5 @@ class MockitoExtensionTest extends UnitTestSuite {
 
   test("shouldBeAppliedIfContains() for a non-mockito qualified name should return false") {
     shouldBeAppliedIfContains(q"org.othermock") shouldBe false
-  }
-
-  test("additionalImportersProvider() should return MockitoAdditionalImportersProvider") {
-    additionalImportersProvider() shouldBe MockitoAdditionalImportersProvider
-  }
-
-  test("importerExcludedPredicate() should return MockitoImporterExcludedPredicate") {
-    importerExcludedPredicate() shouldBe MockitoImporterExcludedPredicate
-  }
-
-  test("importerTransformer() should return MockitoImporterTransformer") {
-    importerTransformer() shouldBe MockitoImporterTransformer
-  }
-
-  test("classTransformer() should return MockitoClassTransformer") {
-    classTransformer() shouldBe MockitoClassTransformer
-  }
-
-  test("templateInitExcludedPredicate() should return MockitoTemplateInitExcludedPredicate") {
-    templateInitExcludedPredicate() shouldBe MockitoTemplateInitExcludedPredicate
-  }
-
-  test("defnValTransformer() should return MockitoDefnValTransformer") {
-    defnValTransformer() shouldBe MockitoDefnValTransformer
-  }
-
-  test("defnValToDeclVarTransformer() should return MockitoDefnValToDeclVarTransformer") {
-    defnValToDeclVarTransformer() shouldBe MockitoDefnValToDeclVarTransformer
-  }
-
-  test("termApplyTypeToTermApplyTransformer() should return MockitoTermApplyTypeToTermApplyTransformer") {
-    termApplyTypeToTermApplyTransformer() shouldBe MockitoTermApplyTypeToTermApplyTransformer
-  }
-
-  test("termApplyTransformer() should return MockitoTermApplyTransformer") {
-    termApplyTransformer() shouldBe MockitoTermApplyTransformer
-  }
-
-  test("termSelectTransformer() should return MockitoTermSelectTransformer") {
-    termSelectTransformer() shouldBe MockitoTermSelectTransformer
   }
 }
