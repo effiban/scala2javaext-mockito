@@ -15,6 +15,8 @@ class MockitoImporterTransformerTest extends UnitTestSuite {
     (importer"org.mockito.ArgumentMatchersSugar.eqTo", importer"org.mockito.ArgumentMatchers.eq"),
     (importer"org.mockito.ArgumentMatchersSugar.intThat", importer"org.mockito.ArgumentMatchers.argThat"),
     (importer"org.mockito.ArgumentMatchersSugar.isA", importer"org.mockito.ArgumentMatchers.isA"),
+    (importer"org.mockito.ArgumentMatchersSugar.refEq", importer"org.mockito.ArgumentMatchers.refEq"),
+    (importer"org.mockito.ArgumentMatchersSugar.same", importer"org.mockito.ArgumentMatchers.same"),
     (importer"org.mockito.ArgumentMatchersSugar._", importer"org.mockito.ArgumentMatchers._"),
     (importer"org.mockito.MockitoSugar.mock", importer"org.mockito.Mockito.mock"),
     (importer"org.mockito.MockitoSugar.spy", importer"org.mockito.Mockito.spy"),
