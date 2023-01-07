@@ -81,6 +81,8 @@ publishing {
             from components.java
 
             pom {
+                name = 'Scala2Java Mockito Extension'
+                description = 'Scala2Java extension for Mockito'
                 url = 'https://github.com/effiban/scala2javaext-mockito'
                 licenses {
                     license {
