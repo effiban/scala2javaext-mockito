@@ -16,6 +16,6 @@ public class SampleTest {
     }
 
     public void aMethod() {
-        final Foo foo = spy(Foo.class)(new Foo(2));
+        final Foo foo = spy(new Foo(2));
     }
 }

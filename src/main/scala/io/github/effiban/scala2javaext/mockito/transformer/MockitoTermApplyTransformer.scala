@@ -10,6 +10,8 @@ object MockitoTermApplyTransformer extends TermApplyTransformer {
     termApply match {
       case q"ArgCaptor($args)" => q"ArgCaptor.apply($args)"
       case q"eqTo($args)" => q"eq($args)"
+      // This is to avoid getting an extra incorrect 'classOf' added by the nested transformer
+      case Term.Apply(Term.ApplyType(q"spy", _), args) => Term.Apply(q"spy", args)
       case aTermApply => aTermApply
     }
   }

@@ -16,6 +16,6 @@ public class SampleTest {
     }
 
     public Foo newSpy() {
-        return spy(Foo.class)(foo);
+        return spy(foo);
     }
 }
