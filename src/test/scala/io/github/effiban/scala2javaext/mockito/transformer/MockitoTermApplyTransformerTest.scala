@@ -11,6 +11,8 @@ class MockitoTermApplyTransformerTest extends UnitTestSuite {
     ("Input", "ExpectedOutput"),
     (q"ArgCaptor(classOf[Foo])", q"ArgCaptor.apply(classOf[Foo])"),
     (q"eqTo(33)", q"eq(33)"),
+    (q"spy(4)", q"spy(4)"),
+    (q"spy[Int](4)", q"spy(4)"),
     (q"blabla(4)", q"blabla(4)")
   )
 
