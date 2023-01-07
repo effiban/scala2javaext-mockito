@@ -16,13 +16,15 @@ object MockitoImporterTransformer extends ImporterTransformer {
   }
 
   private def transformArgumentMatcher(ref: Term.Ref, theImportee: Importee): Importer = {
-    val newRef = q"org.mockito.ArgumentMatchers"
+    val javaRef = q"org.mockito.ArgumentMatchers"
     theImportee match {
-      case Importee.Name(nm) if nm.value.startsWith("any") => Importer(newRef, List(importee"any"))
-      case importee"eqTo" => Importer(newRef, List(importee"eq"))
-      case importee"isA" => Importer(newRef, List(importee"isA"))
-      case Importee.Name(nm) if nm.value.endsWith("That") => Importer(newRef, List(importee"argThat"))
-      case Importee.Wildcard() => Importer(newRef, List(Importee.Wildcard()))
+      case Importee.Name(nm) if nm.value.startsWith("any") => Importer(javaRef, List(importee"any"))
+      case importee"eqTo" => Importer(javaRef, List(importee"eq"))
+      case anImportee@(importee"isA" |
+                       importee"refEq" |
+                       importee"same") => Importer(javaRef, List(anImportee))
+      case Importee.Name(nm) if nm.value.endsWith("That") => Importer(javaRef, List(importee"argThat"))
+      case Importee.Wildcard() => Importer(javaRef, List(Importee.Wildcard()))
       case anImportee => Importer(ref, List(anImportee))
     }
   }
