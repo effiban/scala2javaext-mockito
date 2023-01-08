@@ -9,7 +9,7 @@ import java.util.stream.*;
 import org.mockito.*;
 import org.mockito.Mock;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class SampleTest {
     private final int x = 3;
 
