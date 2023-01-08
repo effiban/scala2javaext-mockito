@@ -7,6 +7,6 @@ import scala.meta.{Defn, XtensionQuasiquoteMod}
 object MockitoClassTransformer extends ClassTransformer {
 
   override def transform(defnClass: Defn.Class): Defn.Class = {
-    defnClass.copy(mods = defnClass.mods :+ mod"@RunWith(classOf[MockitoJUnitRunner])")
+    defnClass.copy(mods = defnClass.mods :+ mod"@ExtendWith(classOf[MockitoExtension])")
   }
 }

@@ -10,7 +10,7 @@ import org.mockito.*;
 import org.mockito.ArgumentMatchers.any;
 import org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class SampleTest {
 
     public SampleTest() {

@@ -8,7 +8,7 @@ import java.util.function.*;
 import java.util.stream.*;
 import org.mockito.*;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class SampleTest {
     private final int x = 3;
 

@@ -17,7 +17,7 @@ class MockitoClassTransformerTest extends UnitTestSuite {
 
     val expectedOutputClass =
       q"""
-      @RunWith(classOf[MockitoJUnitRunner])
+      @ExtendWith(classOf[MockitoExtension])
       class MyClass {
         val x = 3
       }
