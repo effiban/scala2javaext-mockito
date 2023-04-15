@@ -13,7 +13,4 @@ import org.mockito.Mockito.mock;
 public class SampleTest {
     @Mock
     private Foo x;
-
-    public SampleTest() {
-    }
 }

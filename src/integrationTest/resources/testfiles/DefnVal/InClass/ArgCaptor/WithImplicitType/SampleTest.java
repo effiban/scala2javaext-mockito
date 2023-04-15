@@ -13,7 +13,4 @@ import org.mockito.ArgumentCaptor;
 public class SampleTest {
     @Captor
     private ArgumentCaptor<Foo> fooCaptor;
-
-    public SampleTest() {
-    }
 }

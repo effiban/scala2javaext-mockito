@@ -23,15 +23,7 @@ class MockitoTransformersTest extends UnitTestSuite {
     defnValToDeclVarTransformer() shouldBe MockitoDefnValToDeclVarTransformer
   }
 
-  test("termApplyTypeToTermApplyTransformer() should return MockitoTermApplyTypeToTermApplyTransformer") {
-    termApplyTypeToTermApplyTransformer() shouldBe MockitoTermApplyTypeToTermApplyTransformer
-  }
-
   test("termApplyTransformer() should return MockitoTermApplyTransformer") {
     termApplyTransformer() shouldBe MockitoTermApplyTransformer
-  }
-
-  test("termSelectTransformer() should return MockitoTermSelectTransformer") {
-    termSelectTransformer() shouldBe MockitoTermSelectTransformer
   }
 }

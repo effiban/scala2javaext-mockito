@@ -11,7 +11,4 @@ import org.mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class SampleTest {
     private final int x = 3;
-
-    public SampleTest() {
-    }
 }

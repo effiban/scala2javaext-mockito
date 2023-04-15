@@ -13,9 +13,6 @@ import org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class SampleTest {
 
-    public SampleTest() {
-    }
-
     public void aMethod() {
         when(call(isA(Foo.class)))
             .thenReturn("bar");
