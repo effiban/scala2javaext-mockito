@@ -12,11 +12,7 @@ trait MockitoTransformers extends ExtendedTransformers {
 
   override def defnValToDeclVarTransformer(): DefnValToDeclVarTransformer = MockitoDefnValToDeclVarTransformer
 
-  override def termApplyTypeToTermApplyTransformer(): TermApplyTypeToTermApplyTransformer = MockitoTermApplyTypeToTermApplyTransformer
-
   override def termApplyTransformer(): TermApplyTransformer = MockitoTermApplyTransformer
-
-  override def termSelectTransformer(): TermSelectTransformer = MockitoTermSelectTransformer
 
   override def typeNameTransformer(): TypeNameTransformer = MockitoTypeNameTransfomer
 }

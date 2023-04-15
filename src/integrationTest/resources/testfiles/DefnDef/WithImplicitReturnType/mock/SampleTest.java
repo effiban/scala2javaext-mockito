@@ -12,9 +12,6 @@ import org.mockito.Mockito.mock;
 @ExtendWith(MockitoExtension.class)
 public class SampleTest {
 
-    public SampleTest() {
-    }
-
     public Foo newMock() {
         return mock(Foo.class);
     }

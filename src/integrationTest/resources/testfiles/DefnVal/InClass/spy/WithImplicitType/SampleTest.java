@@ -11,11 +11,6 @@ import org.mockito.Mockito.spy;
 
 @ExtendWith(MockitoExtension.class)
 public class SampleTest {
-
-    public SampleTest() {
-    }
-
-    public void aMethod() {
-        final Foo foo = spy(new Foo(2));
-    }
+    @Spy
+    private final Foo x = new Foo(2);
 }

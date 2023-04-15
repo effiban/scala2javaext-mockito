@@ -12,9 +12,6 @@ import org.mockito.ArgumentCaptor;
 @ExtendWith(MockitoExtension.class)
 public class SampleTest {
 
-    public SampleTest() {
-    }
-
     public void aMethod() {
         final ArgumentCaptor<Foo> fooCaptor = ArgumentCaptor.forClass(Foo.class);
     }

@@ -12,10 +12,7 @@ import org.mockito.Mockito.spy;
 @ExtendWith(MockitoExtension.class)
 public class SampleTest {
 
-    public SampleTest() {
-    }
-
-    public Foo newSpy() {
-        return spy(Foo.class);
+    public void aMethod() {
+        final Foo foo = spy(new Foo(2));
     }
 }
