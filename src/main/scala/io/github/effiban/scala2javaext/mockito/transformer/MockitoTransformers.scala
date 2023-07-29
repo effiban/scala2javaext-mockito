@@ -8,9 +8,9 @@ trait MockitoTransformers extends ExtendedTransformers {
 
   override def classTransformer(): ClassTransformer = MockitoClassTransformer
 
-  override def defnValTransformer(): DefnValTransformer = MockitoDefnValTransformer
+  override def defnVarTransformer(): DefnVarTransformer = MockitoDefnVarTransformer
 
-  override def defnValToDeclVarTransformer(): DefnValToDeclVarTransformer = MockitoDefnValToDeclVarTransformer
+  override def defnVarToDeclVarTransformer(): DefnVarToDeclVarTransformer = MockitoDefnVarToDeclVarTransformer
 
   override def termApplyTransformer(): TermApplyTransformer = MockitoTermApplyTransformer
 
