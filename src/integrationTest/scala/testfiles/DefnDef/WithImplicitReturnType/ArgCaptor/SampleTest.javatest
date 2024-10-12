@@ -1,0 +1,15 @@
+package testfiles.DefnDef.WithImplicitReturnType.ArgCaptor;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.ArgumentCaptor;
+import testfilesext.Foo;
+import org.mockito.ArgumentCaptor.forClass;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+
+    public ArgumentCaptor<Foo> newCaptor() {
+        return forClass(Foo.class);
+    }
+}

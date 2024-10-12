@@ -1,0 +1,10 @@
+package testfiles.Class.Extending.MockitoSugar;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.MockitoSugar;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+    private final int x = 3;
+}

@@ -1,0 +1,15 @@
+package testfiles.DefnDef.WithImplicitReturnType.spy.WithoutTypeParam.Inferrable.Inherited;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.MockitoSugar;
+import testfilesext.Foo;
+import org.mockito.Mockito.spy;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+
+    public Foo newSpy() {
+        return spy(Foo(1));
+    }
+}

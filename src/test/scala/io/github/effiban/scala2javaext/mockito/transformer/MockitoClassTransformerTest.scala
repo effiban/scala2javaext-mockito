@@ -17,7 +17,7 @@ class MockitoClassTransformerTest extends UnitTestSuite {
 
     val expectedOutputClass =
       q"""
-      @ExtendWith(classOf[MockitoExtension])
+      @org.junit.jupiter.api.extension.ExtendWith(classOf[org.mockito.junit.jupiter.MockitoExtension])
       class MyClass {
         val x = 3
       }

@@ -1,0 +1,20 @@
+package testfiles.TermApplyType.anyList.Imported;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.Mock;
+import testfilesext.Foo;
+import org.mockito.Mockito.when;
+import org.mockito.ArgumentMatchers;
+import java.util.List.of;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+    @Mock
+    private Foo foo;
+
+    public void aMethod() {
+        when(foo.appendTo(ArgumentMatchers.<int>anyList()))
+        .thenReturn(of(1, 2));
+    }
+}

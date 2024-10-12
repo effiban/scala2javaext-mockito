@@ -13,3 +13,4 @@ See the [Wiki](https://github.com/effiban/scala2javaext-mockito/wiki)
 ## Licensing
 Scala2Java Mockito Extension is licensed under the Apache License, Version 2.0.
 
+ 

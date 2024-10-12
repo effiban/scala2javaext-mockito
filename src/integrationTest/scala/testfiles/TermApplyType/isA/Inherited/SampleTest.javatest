@@ -1,0 +1,21 @@
+package testfiles.TermApplyType.isA.Inherited;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.MockitoSugar;
+import org.mockito.ArgumentMatchersSugar;
+import org.mockito.Mock;
+import testfilesext.Foo;
+import org.mockito.Mockito.when;
+import org.mockito.ArgumentMatchers.isA;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+    @Mock
+    private Foo foo;
+
+    public void aMethod() {
+        when(foo.add(isA(Foo.class)))
+        .thenReturn(Foo(3));
+    }
+}

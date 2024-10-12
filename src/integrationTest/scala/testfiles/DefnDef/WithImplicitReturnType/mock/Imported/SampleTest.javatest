@@ -1,0 +1,14 @@
+package testfiles.DefnDef.WithImplicitReturnType.mock.Imported;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import testfilesext.Foo;
+import org.mockito.Mockito.mock;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+
+    public Foo newMock() {
+        return mock(Foo.class);
+    }
+}

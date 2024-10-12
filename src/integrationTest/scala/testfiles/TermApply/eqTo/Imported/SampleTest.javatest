@@ -1,0 +1,17 @@
+package testfiles.TermApply.eqTo.Imported;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import testfilesext.Foo;
+import org.mockito.Mockito.when;
+import org.mockito.ArgumentMatchers.eq;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+
+    public void aMethod() {
+        final Foo foo = Foo(2);
+        when(foo.appendTo(eq("bar")))
+        .thenReturn("zoo");
+    }
+}
