@@ -1,0 +1,13 @@
+package testfiles.DefnVal.InClass.ArgCaptor.WithExplicitType;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.Captor;
+import org.mockito.ArgumentCaptor;
+import testfilesext.Foo;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+    @Captor
+    private ArgumentCaptor<Foo> fooCaptor;
+}

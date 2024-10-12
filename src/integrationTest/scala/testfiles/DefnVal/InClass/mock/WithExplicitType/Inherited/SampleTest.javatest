@@ -1,0 +1,13 @@
+package testfiles.DefnVal.InClass.mock.WithExplicitType.Inherited;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.MockitoSugar;
+import org.mockito.Mock;
+import testfilesext.Foo;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+    @Mock
+    private Foo x;
+}

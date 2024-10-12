@@ -1,0 +1,14 @@
+package testfiles.DefnVar.InMethod.mock.WithExplicitType;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import testfilesext.Foo;
+import org.mockito.Mockito.mock;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+
+    public void aMethod() {
+        Foo foo = mock(Foo.class);
+    }
+}

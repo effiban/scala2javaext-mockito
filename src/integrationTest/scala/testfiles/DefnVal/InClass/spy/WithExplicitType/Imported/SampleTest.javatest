@@ -1,0 +1,12 @@
+package testfiles.DefnVal.InClass.spy.WithExplicitType.Imported;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.Spy;
+import testfilesext.Foo;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+    @Spy
+    private final Foo x = Foo(2);
+}

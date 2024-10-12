@@ -3,9 +3,9 @@ package io.github.effiban.scala2javaext.mockito.transformer
 import io.github.effiban.scala2java.spi.entities.JavaScope
 import io.github.effiban.scala2java.spi.entities.JavaScope.JavaScope
 import io.github.effiban.scala2java.spi.transformers.DefnVarToDeclVarTransformer
-import io.github.effiban.scala2javaext.mockito.common.MockitoAnnotations.{JavaCaptor, Mock, Spy}
+import io.github.effiban.scala2javaext.mockito.common.MockitoJavaAnnotations.{Captor, Mock}
 
-import scala.meta.{Decl, Defn, Mod, Term, XtensionQuasiquoteTerm, XtensionQuasiquoteType}
+import scala.meta.{Decl, Defn, Mod, Name, Term, XtensionQuasiquoteTerm, XtensionQuasiquoteType}
 
 object MockitoDefnVarToDeclVarTransformer extends DefnVarToDeclVarTransformer {
 
@@ -18,17 +18,18 @@ object MockitoDefnVarToDeclVarTransformer extends DefnVarToDeclVarTransformer {
 
   private def transformMember(defnVar: Defn.Var): Option[Decl.Var] = {
     defnVar.rhs match {
-      case Some(Term.Apply(Term.ApplyType(q"mock", _), Nil)) => transformMockOrSpyMember(defnVar, Mock)
-      case Some(Term.Apply(Term.ApplyType(q"spy", _), Nil)) => transformMockOrSpyMember(defnVar, Spy)
-      case Some(Term.Apply(Term.ApplyType(q"ArgCaptor.apply", _), Nil)) => transformCaptorMember(defnVar)
+      case Some(Term.Apply(Term.ApplyType(Term.Select(Term.Super(_, Name.Indeterminate("MockitoSugar")), q"mock"), _), _))
+        => transformMockMember(defnVar)
+      case Some(Term.Apply(Term.ApplyType(q"org.mockito.MockitoSugar.mock", _), Nil)) => transformMockMember(defnVar)
+      case Some(Term.Apply(Term.ApplyType(q"org.mockito.captor.ArgCaptor.apply", _), Nil)) => transformCaptorMember(defnVar)
       case _ => None
     }
   }
 
-  private def transformMockOrSpyMember(defnVar: Defn.Var, annot: Mod.Annot): Option[Decl.Var] = {
+  private def transformMockMember(defnVar: Defn.Var): Option[Decl.Var] = {
     import defnVar._
 
-    val newMods = (annot +: mods).filterNot(_.isInstanceOf[Mod.Final])
+    val newMods = (Mock +: mods).filterNot(_.isInstanceOf[Mod.Final])
     (decltpe, rhs) match {
       case (Some(tpe), _) => Some(Decl.Var(newMods, pats, tpe))
       case (None, Some(Term.Apply(Term.ApplyType(_, tpe :: Nil), Nil))) => Some(Decl.Var(newMods, pats, tpe))
@@ -39,10 +40,11 @@ object MockitoDefnVarToDeclVarTransformer extends DefnVarToDeclVarTransformer {
   private def transformCaptorMember(defnVar: Defn.Var): Option[Decl.Var] = {
     import defnVar._
 
-    val newMods = (JavaCaptor +: mods).filterNot(_.isInstanceOf[Mod.Final])
+    val newMods = (Captor +: mods).filterNot(_.isInstanceOf[Mod.Final])
     (decltpe, rhs) match {
       case (Some(tpe), _) => Some(Decl.Var(newMods, pats, tpe))
-      case (None, Some(Term.Apply(Term.ApplyType(_, tpe :: Nil), Nil))) => Some(Decl.Var(newMods, pats, t"Captor[$tpe]"))
+      case (None, Some(Term.Apply(Term.ApplyType(_, tpe :: Nil), Nil))) =>
+        Some(Decl.Var(newMods, pats, t"org.mockito.captor.Captor[$tpe]"))
       case _ => None
     }
   }

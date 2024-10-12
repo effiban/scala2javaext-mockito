@@ -1,0 +1,16 @@
+package testfiles.DefnDef.WithImplicitReturnType.spy.WithTypeParam.NotInferrable.Inherited;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.MockitoSugar;
+import testfilesext.Foo;
+import org.mockito.Mockito;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+
+    private /* UnknownType */ newSpy() {
+        final Foo foo = new Foo();
+        /* return? */Mockito.<Foo>spy(foo);
+    }
+}
