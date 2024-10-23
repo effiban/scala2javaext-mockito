@@ -1,4 +1,4 @@
-package testfiles.DefnVal.InClass.mock.WithExplicitType.Inherited;
+package testfiles.DefnVal.InClass.mock.WithExplicitType.Inherited.FromOuterClass;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -8,6 +8,10 @@ import testfilesext.Foo;
 
 @ExtendWith(MockitoExtension.class)
 public class SampleTest {
-    @Mock
-    private Foo x;
+
+    @ExtendWith(MockitoExtension.class)
+    public class SampleTestInner {
+        @Mock
+        private Foo x;
+    }
 }
