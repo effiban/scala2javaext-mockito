@@ -4,8 +4,6 @@ import io.github.effiban.scala2java.spi.predicates.{ExtendedPredicates, Template
 
 trait MockitoPredicates extends ExtendedPredicates {
 
-  override def templateInitExcludedPredicate(): TemplateInitExcludedPredicate = MockitoTemplateInitExcludedPredicate
-
   override def termSelectHasApplyMethod(): TermSelectHasApplyMethod = MockitoTermSelectHasApplyMethod
 
   override def termSelectSupportsNoArgInvocation(): TermSelectSupportsNoArgInvocation = MockitoTermSelectSupportsNoArgInvocation

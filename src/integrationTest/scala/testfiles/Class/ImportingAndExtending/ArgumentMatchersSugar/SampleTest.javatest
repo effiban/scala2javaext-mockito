@@ -2,7 +2,6 @@ package testfiles.Class.ImportingAndExtending.ArgumentMatchersSugar;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.ArgumentMatchersSugar;
 
 @ExtendWith(MockitoExtension.class)
 public class SampleTest {

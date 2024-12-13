@@ -2,7 +2,6 @@ package testfiles.DefnVar.InClass.spy.WithImplicitType.Inherited;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.MockitoSugar;
 import org.mockito.Spy;
 import testfilesext.Foo;
 
