@@ -2,7 +2,6 @@ package testfiles.DefnVar.InClass.mock.WithImplicitType.Inherited;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.MockitoSugar;
 import org.mockito.Mock;
 import testfilesext.Foo;
 
